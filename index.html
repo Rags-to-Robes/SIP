@@ -66,7 +66,7 @@
 
     <div id="chat-container" class="hidden fixed bottom-20 right-6 w-80 max-h-[500px] bg-white border border-gray-300 rounded-lg shadow-lg flex flex-col">
       <div class="bg-green-200 text-green-900 p-3 font-semibold text-center">Need Help?</div>
-      <div id="chat" class="flex-1 overflow-y-auto p-3 text-sm"></div>
+      <div id="chat" class="flex-1 overflow-y-auto p-3 text-sm text-left"></div>
       <div id="input-area" class="p-3 border-t border-gray-200"></div>
     </div>
 
@@ -101,10 +101,6 @@
       const chat = document.getElementById("chat");
       const inputArea = document.getElementById("input-area");
 
-      chatToggle.onclick = () => {
-        chatContainer.classList.toggle("hidden");
-      };
-
       const questions = [
         {
           text: "What challenge are you facing in your congregation?",
@@ -112,7 +108,7 @@
             "We don’t know where to start",
             "People don’t believe poverty can be overcome",
             "Our resources aren’t working",
-            "We aren’t aligned in purpose or language",
+            "There’s a language gap between those in poverty and our leaders",
             "We need examples of success",
             "We feel alone in this effort"
           ]
@@ -133,7 +129,7 @@
         "We don’t know where to start": "Check out the Congregational Startup Guide.",
         "People don’t believe poverty can be overcome": "Share stories of transformation from the Success Stories page.",
         "Our resources aren’t working": "Explore the Alignment & Mindset resources to unlock hidden barriers.",
-        "We aren’t aligned in purpose or language": "Use our Mindset Training materials to align your team.",
+        "There’s a language gap between those in poverty and our leaders": "Check out the Mindset Language Guide to align understanding.",
         "We need examples of success": "Visit the Program Hub and view real-world case studies.",
         "We feel alone in this effort": "Visit the Community Page to connect with others."
       };
@@ -143,7 +139,7 @@
 
       function showMessage(message, isUser = false) {
         const div = document.createElement("div");
-        div.className = `chat-bubble ${isUser ? 'bg-green-100 text-right ml-auto' : 'bg-gray-100'}`;
+        div.className = `chat-bubble ${isUser ? 'bg-green-100 ml-auto text-right' : 'bg-gray-100 text-left'}`;
         div.textContent = message;
         chat.appendChild(div);
         chat.scrollTop = chat.scrollHeight;
@@ -154,7 +150,7 @@
         inputArea.innerHTML = "";
         question.options.forEach(option => {
           const btn = document.createElement("button");
-          btn.className = "m-1 px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700 text-sm";
+          btn.className = "m-1 px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700 text-sm text-left w-full text-start";
           btn.textContent = option;
           btn.onclick = () => {
             responses.push(option);
@@ -176,9 +172,9 @@
         }
       }
 
-      // Start chatbot once opened
       chatToggle.addEventListener("click", () => {
-        if (chatContainer.classList.contains("hidden")) {
+        chatContainer.classList.toggle("hidden");
+        if (!chatContainer.classList.contains("hidden")) {
           step = 0;
           responses = [];
           chat.innerHTML = "";
