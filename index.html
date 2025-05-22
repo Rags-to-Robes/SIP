@@ -1,33 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rags to Robes</title>
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
-  <header>
-    <h1>Rags to Robes</h1>
-    <nav>
-      <ul>
-        <li><a href="pages/resources.html">Resource Directory</a></li>
-        <li><a href="pages/training.html">Training Portal</a></li>
-        <li><a href="pages/community.html">Community Engagement</a></li>
-        <li><a href="pages/emergency.html">Emergency Referrals</a></li>
-      </ul>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rags to Robes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .fade-slide {
+        transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+      }
+    </style>
+  </head>
 
-  <main>
-    <section>
-      <h2>Welcome to Rags to Robes</h2>
-      <p>This platform connects faith-based programs and provides critical resources for those in need.</p>
+  <body class="bg-green-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-green-200 p-4 shadow">
+      <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+        <h1 class="text-2xl font-bold text-green-900">Rags to Robes</h1>
+        <nav class="mt-2 md:mt-0">
+          <ul class="flex gap-4 text-green-800 font-semibold">
+            <li><a href="pages/resources.html" class="hover:underline">Resources</a></li>
+            <li><a href="pages/training.html" class="hover:underline">Training</a></li>
+            <li><a href="pages/community.html" class="hover:underline">Community</a></li>
+            <li><a href="pages/emergency.html" class="hover:underline">Emergency</a></li>
+            <li><a href="pages/events.html" class="hover:underline">Events</a></li>
+            <li><a href="pages/mindset.html" class="hover:underline">Mindset</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="container mx-auto mt-10 px-4">
+      <section class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Faith-Rooted Collaboration Against Generational Poverty</h2>
+        <p class="text-lg mb-6 max-w-2xl mx-auto">
+          Rags to Robes is a unifying platform for faith-based and values-driven communities to share transformative solutions to generational poverty. From churches to mosques, synagogues to temples, we believe that diverse spiritual wisdom can light the path toward lasting change.
+        </p>
+      </section>
+
+      <!-- Mindset Shift Section -->
+      <section class="bg-yellow-100 border-l-4 border-yellow-500 p-6 mb-12">
+        <h3 class="text-xl font-semibold mb-2">Mindset Matters: A New Way to Talk About Poverty</h3>
+        <p class="mb-2">
+          Too often, the solution to poverty is framed as “more”—more resources, more money, more programs. But what if the missing piece is language and alignment? When congregations and communities don’t speak the same language, efforts fall short—even with abundant resources.
+        </p>
+        <p>
+          Rags to Robes shifts the conversation. We believe the solution lies not only in material aid but in a shared mindset. When spiritual communities align their language, purpose, and belief in human dignity, they become unstoppable agents of change.
+        </p>
+      </section>
+
+      <!-- CTA Section with Rotating Success Stories -->
+      <section class="bg-white p-8 rounded-lg shadow-lg text-center">
+        <h3 class="text-2xl font-semibold mb-4">Stories of Faith in Action</h3>
+        <p id="success-story" class="italic fade-slide text-green-700 text-lg mb-6 h-24 flex items-center justify-center"></p>
+        <a href="pages/resources.html" class="bg-green-700 hover:bg-green-800 text-white px-6 py-2 rounded shadow">
+          Explore the Hub
+        </a>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-200 mt-20 p-4 text-center text-green-800">
+      <p>© 2025 Rags to Robes. All rights reserved.</p>
+    </footer>
+
+    <script>
+      const stories = [
+        "'Our synagogue and local shelter now run a shared meal service — it began with one conversation.'",
+        "'Our mosque's zakat committee funded transitional housing for three families last year.'",
+        "'We formed a coalition with three churches and a temple to launch a literacy initiative for youth.'",
+        "'After our interfaith dialogue, we realized our struggles were the same — and began working together.'"
+      ];
+      let index = 0;
+      const storyElement = document.getElementById("success-story");
+
+      function rotateStory() {
+        storyElement.style.opacity = 0;
+        setTimeout(() => {
+          storyElement.textContent = stories[index];
+          storyElement.style.opacity = 1;
+          index = (index + 1) % stories.length;
+        }, 1000);
+      }
+
+      rotateStory();
+      setInterval(rotateStory, 6000);
+    </script>
+
+        <!-- Chatbot Section -->
+    <section class="bg-white p-6 mt-12 rounded shadow max-w-xl mx-auto" id="chat-section">
+      <h3 class="text-xl font-semibold mb-4 text-center">Not Sure Where to Start?</h3>
+      <div id="chat" class="bg-gray-50 p-4 rounded h-96 overflow-y-auto mb-4"></div>
+      <div id="input-area" class="text-center"></div>
     </section>
-  </main>
 
-  <footer>
-    <p>© 2025 Rags to Robes</p>
-  </footer>
-</body>
+    <script>
+      const chat = document.getElementById("chat");
+      const inputArea = document.getElementById("input-area");
+    
+      const questions = [
+        {
+          text: "What challenge are you facing in your congregation?",
+          options: [
+            "We don’t know where to start",
+            "People don’t believe poverty can be overcome",
+            "Our resources aren’t working",
+            "We aren’t aligned in purpose or language",
+            "We need examples of success",
+            "We feel alone in this effort"
+          ]
+        },
+        {
+          text: "What kind of support would be most helpful right now?",
+          options: [
+            "Stories of what works",
+            "Step-by-step guides",
+            "Workshops or templates",
+            "A conversation with another congregation",
+            "A mindset shift activity"
+          ]
+        }
+      ];
+    
+      const recommendations = {
+        "We don’t know where to start": "Check out the Congregational Startup Guide.",
+        "People don’t believe poverty can be overcome": "Share stories of transformation from the Success Stories page.",
+        "Our resources aren’t working": "Explore the Alignment & Mindset resources to unlock hidden barriers.",
+        "We aren’t aligned in purpose or language": "Use our Mindset Training materials to align your team.",
+        "We need examples of success": "Visit the Program Hub and view real-world case studies.",
+        "We feel alone in this effort": "Visit the Community Page to connect with others."
+      };
+    
+      let step = 0;
+      let responses = [];
+    
+      function showMessage(message, isUser = false) {
+        const div = document.createElement("div");
+        div.className = `chat-bubble ${isUser ? 'bg-green-100 text-right ml-auto' : 'bg-gray-100'}`;
+        div.textContent = message;
+        chat.appendChild(div);
+        chat.scrollTop = chat.scrollHeight;
+      }
+    
+      function showOptions(question) {
+        showMessage(question.text);
+        inputArea.innerHTML = "";
+        question.options.forEach(option => {
+          const btn = document.createElement("button");
+          btn.className = "m-1 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700";
+          btn.textContent = option;
+          btn.onclick = () => {
+            responses.push(option);
+            showMessage(option, true);
+            step++;
+            setTimeout(nextQuestion, 500);
+          };
+          inputArea.appendChild(btn);
+        });
+      }
+    
+      function nextQuestion() {
+        if (step < questions.length) {
+          showOptions(questions[step]);
+        } else {
+          inputArea.innerHTML = "";
+          showMessage("Thanks for sharing. Here's something that might help:");
+          showMessage(recommendations[responses[0]] || "Visit our Resource Directory to get started.");
+        }
+      }
+    
+      // Start chatbot on page load
+      nextQuestion();
+    </script>
+    
+  </body>
 </html>

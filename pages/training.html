@@ -1,1 +1,104 @@
-<h1>Training Portal</h1><p>Access training materials and guides here...</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Training Chatbot</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .chat-bubble {
+      max-width: 80%;
+      margin-bottom: 0.5rem;
+      padding: 0.75rem 1rem;
+      border-radius: 1rem;
+    }
+  </style>
+</head>
+<body class="bg-green-50 text-gray-800">
+  <main class="container mx-auto p-6 max-w-xl">
+    <h1 class="text-2xl font-bold text-center mb-4">Training Needs Chatbot</h1>
+    <div id="chat" class="bg-white p-4 rounded shadow h-96 overflow-y-auto mb-4"></div>
+    <div id="input-area" class="text-center"></div>
+  </main>
+
+  <script>
+    const chat = document.getElementById("chat");
+    const inputArea = document.getElementById("input-area");
+
+    const questions = [
+      {
+        text: "What challenge are you facing in your congregation?",
+        options: [
+          "We don’t know where to start",
+          "People don’t believe poverty can be overcome",
+          "Our resources aren’t working",
+          "We aren’t aligned in purpose or language",
+          "We need examples of success",
+          "We feel alone in this effort"
+        ]
+      },
+      {
+        text: "What kind of support would be most helpful right now?",
+        options: [
+          "Stories of what works",
+          "Step-by-step guides",
+          "Workshops or templates",
+          "A conversation with another congregation",
+          "A mindset shift activity"
+        ]
+      }
+    ];
+
+    const recommendations = {
+      "We don’t know where to start": "Check out the Congregational Startup Guide.",
+      "People don’t believe poverty can be overcome": "Share stories of transformation from the Success Stories page.",
+      "Our resources aren’t working": "Explore the Alignment & Mindset resources to unlock hidden barriers.",
+      "We aren’t aligned in purpose or language": "Use our Mindset Training materials to align your team.",
+      "We need examples of success": "Visit the Program Hub and view real-world case studies.",
+      "We feel alone in this effort": "Visit the Community Page to connect with others."
+    };
+
+    let step = 0;
+    let responses = [];
+
+    function showMessage(message, isUser = false) {
+      const div = document.createElement("div");
+      div.className = `chat-bubble ${isUser ? 'bg-green-100 text-right ml-auto' : 'bg-gray-100'}`;
+      div.textContent = message;
+      chat.appendChild(div);
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    function showOptions(question) {
+      showMessage(question.text);
+      inputArea.innerHTML = "";
+      question.options.forEach(option => {
+        const btn = document.createElement("button");
+        btn.className = "m-1 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700";
+        btn.textContent = option;
+        btn.onclick = () => {
+          responses.push(option);
+          showMessage(option, true);
+          step++;
+          setTimeout(nextQuestion, 500);
+        };
+        inputArea.appendChild(btn);
+      });
+    }
+
+    function nextQuestion() {
+      if (step < questions.length) {
+        showOptions(questions[step]);
+      } else {
+        // Final recommendation
+        inputArea.innerHTML = "";
+        showMessage("Thanks for sharing. Here's something that might help:");
+        showMessage(recommendations[responses[0]] || "Visit our Resource Directory to get started.");
+      }
+    }
+
+    // Start chat
+    nextQuestion();
+  </script>
+</body>
+</html>
