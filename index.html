@@ -101,29 +101,56 @@
       const chat = document.getElementById("chat");
       const inputArea = document.getElementById("input-area");
 
-      const questions = [
-        {
-          text: "What challenge are you facing in your congregation?",
+      const questionsMap = {
+        "We don’t know where to start": {
+          followUp: "Where would you like to begin?",
           options: [
-            "We don’t know where to start",
-            "People don’t believe poverty can be overcome",
-            "Our resources aren’t working",
-            "There’s a language gap between those in poverty and our leaders",
-            "We need examples of success",
-            "We feel alone in this effort"
+            "Identifying root causes",
+            "Creating a team",
+            "Learning from another congregation"
           ]
         },
-        {
-          text: "What kind of support would be most helpful right now?",
+        "People don’t believe poverty can be overcome": {
+          followUp: "What would help build hope?",
           options: [
-            "Stories of what works",
-            "Step-by-step guides",
-            "Workshops or templates",
-            "A conversation with another congregation",
-            "A mindset shift activity"
+            "Success stories",
+            "Spiritual encouragement",
+            "Connection with another community"
+          ]
+        },
+        "Our resources aren’t working": {
+          followUp: "What are you looking to change?",
+          options: [
+            "Better alignment with needs",
+            "Tools to assess effectiveness",
+            "Training for volunteers"
+          ]
+        },
+        "There’s a language gap between those in poverty and our leaders": {
+          followUp: "What kind of language tools would help?",
+          options: [
+            "Mindset guides",
+            "Scripture-based framing",
+            "Training videos"
+          ]
+        },
+        "We need examples of success": {
+          followUp: "What type of success stories are you looking for?",
+          options: [
+            "From similar-sized congregations",
+            "From different faith traditions",
+            "On specific issues like housing or addiction"
+          ]
+        },
+        "We feel alone in this effort": {
+          followUp: "What kind of connection are you hoping for?",
+          options: [
+            "Interfaith partnerships",
+            "Mentorship from experienced leaders",
+            "Local coalitions"
           ]
         }
-      ];
+      };
 
       const recommendations = {
         "We don’t know where to start": "Check out the Congregational Startup Guide.",
@@ -163,9 +190,30 @@
       }
 
       function nextQuestion() {
-        if (step < questions.length) {
-          showOptions(questions[step]);
+        if (step === 0) {
+          // Show the first general question
+          const firstQuestion = {
+            text: "What challenge are you facing in your congregation?",
+            options: Object.keys(questionsMap)
+          };
+          showOptions(firstQuestion);
+        } else if (step === 1) {
+          // Show follow-up question based on first response
+          const firstResponse = responses[0];
+          const followUpData = questionsMap[firstResponse];
+          if (followUpData) {
+            const followUpQuestion = {
+              text: followUpData.followUp,
+              options: followUpData.options
+            };
+            showOptions(followUpQuestion);
+          } else {
+            inputArea.innerHTML = "";
+            showMessage("Thanks for sharing. Here's something that might help:");
+            showMessage(recommendations[firstResponse] || "Visit our Resource Directory to get started.");
+          }
         } else {
+          // After second response, show recommendation
           inputArea.innerHTML = "";
           showMessage("Thanks for sharing. Here's something that might help:");
           showMessage(recommendations[responses[0]] || "Visit our Resource Directory to get started.");
