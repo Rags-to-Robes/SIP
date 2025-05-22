@@ -64,10 +64,8 @@
       💬
     </button>
 
-    <div id="chat-container" class="hidden fixed bottom-20 right-6 w-80 max-h-[500px] bg-white border border-gray-300 rounded-lg shadow-lg flex flex-col">
-      <div class="bg-green-200 text-green-900 p-3 font-semibold text-center">Need Help?</div>
-      <div id="chat" class="flex-1 overflow-y-auto p-3 text-sm text-left"></div>
-      <div id="input-area" class="p-3 border-t border-gray-200"></div>
+    <div id="chat-container" class="hidden fixed bottom-20 right-6 w-[350px] h-[500px] bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+      <iframe src="pages/trainingchatbot.html" class="w-full h-full border-none"></iframe>
     </div>
 
     <!-- Footer -->
@@ -94,141 +92,14 @@
       }
       rotateStory();
       setInterval(rotateStory, 6000);
+    </script>
 
-      // Chatbot Logic
+    <script>
       const chatToggle = document.getElementById("chat-toggle");
       const chatContainer = document.getElementById("chat-container");
-      const chat = document.getElementById("chat");
-      const inputArea = document.getElementById("input-area");
-
-      const questionsMap = {
-        "We don’t know where to start": {
-          followUp: "Where would you like to begin?",
-          options: [
-            "Identifying root causes",
-            "Creating a team",
-            "Learning from another congregation"
-          ]
-        },
-        "People don’t believe poverty can be overcome": {
-          followUp: "What would help build hope?",
-          options: [
-            "Success stories",
-            "Spiritual encouragement",
-            "Connection with another community"
-          ]
-        },
-        "Our resources aren’t working": {
-          followUp: "What are you looking to change?",
-          options: [
-            "Better alignment with needs",
-            "Tools to assess effectiveness",
-            "Training for volunteers"
-          ]
-        },
-        "There’s a language gap between those in poverty and our leaders": {
-          followUp: "What kind of language tools would help?",
-          options: [
-            "Mindset guides",
-            "Scripture-based framing",
-            "Training videos"
-          ]
-        },
-        "We need examples of success": {
-          followUp: "What type of success stories are you looking for?",
-          options: [
-            "From similar-sized congregations",
-            "From different faith traditions",
-            "On specific issues like housing or addiction"
-          ]
-        },
-        "We feel alone in this effort": {
-          followUp: "What kind of connection are you hoping for?",
-          options: [
-            "Interfaith partnerships",
-            "Mentorship from experienced leaders",
-            "Local coalitions"
-          ]
-        }
-      };
-
-      const recommendations = {
-        "We don’t know where to start": "Check out the Congregational Startup Guide.",
-        "People don’t believe poverty can be overcome": "Share stories of transformation from the Success Stories page.",
-        "Our resources aren’t working": "Explore the Alignment & Mindset resources to unlock hidden barriers.",
-        "There’s a language gap between those in poverty and our leaders": "Check out the Mindset Language Guide to align understanding.",
-        "We need examples of success": "Visit the Program Hub and view real-world case studies.",
-        "We feel alone in this effort": "Visit the Community Page to connect with others."
-      };
-
-      let step = 0;
-      let responses = [];
-
-      function showMessage(message, isUser = false) {
-        const div = document.createElement("div");
-        div.className = `chat-bubble ${isUser ? 'bg-green-100 ml-auto text-right' : 'bg-gray-100 text-left'}`;
-        div.textContent = message;
-        chat.appendChild(div);
-        chat.scrollTop = chat.scrollHeight;
-      }
-
-      function showOptions(question) {
-        showMessage(question.text);
-        inputArea.innerHTML = "";
-        question.options.forEach(option => {
-          const btn = document.createElement("button");
-          btn.className = "m-1 px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700 text-sm text-left w-full text-start";
-          btn.textContent = option;
-          btn.onclick = () => {
-            responses.push(option);
-            showMessage(option, true);
-            step++;
-            setTimeout(nextQuestion, 500);
-          };
-          inputArea.appendChild(btn);
-        });
-      }
-
-      function nextQuestion() {
-        if (step === 0) {
-          // Show the first general question
-          const firstQuestion = {
-            text: "What challenge are you facing in your congregation?",
-            options: Object.keys(questionsMap)
-          };
-          showOptions(firstQuestion);
-        } else if (step === 1) {
-          // Show follow-up question based on first response
-          const firstResponse = responses[0];
-          const followUpData = questionsMap[firstResponse];
-          if (followUpData) {
-            const followUpQuestion = {
-              text: followUpData.followUp,
-              options: followUpData.options
-            };
-            showOptions(followUpQuestion);
-          } else {
-            inputArea.innerHTML = "";
-            showMessage("Thanks for sharing. Here's something that might help:");
-            showMessage(recommendations[firstResponse] || "Visit our Resource Directory to get started.");
-          }
-        } else {
-          // After second response, show recommendation
-          inputArea.innerHTML = "";
-          showMessage("Thanks for sharing. Here's something that might help:");
-          showMessage(recommendations[responses[0]] || "Visit our Resource Directory to get started.");
-        }
-      }
 
       chatToggle.addEventListener("click", () => {
         chatContainer.classList.toggle("hidden");
-        if (!chatContainer.classList.contains("hidden")) {
-          step = 0;
-          responses = [];
-          chat.innerHTML = "";
-          inputArea.innerHTML = "";
-          nextQuestion();
-        }
       });
     </script>
   </body>
