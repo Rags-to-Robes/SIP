@@ -39,7 +39,7 @@
       </section>
 
       <!-- Mindset Shift Section -->
-      <section id="rotating-section" class="bg-green-800 border-l-4 border-green-900 text-white p-6 mb-12">
+      <section id="rotating-section" class="bg-green-800 border-l-4 border-green-900 text-white p-6 mb-12 text-center flex flex-col items-center min-h-[150px]">
         <h3 id="rotating-title" class="text-xl font-semibold mb-2">Mindset Matters: A New Way to Talk About Poverty</h3>
         <p id="rotating-paragraph-1" class="mb-2">
           Too often, the solution to poverty is framed as “more”—more resources, more money, more programs. But what if the missing piece is language and alignment?
@@ -52,7 +52,7 @@
       <!-- CTA Section with Rotating Success Stories -->
       <section class="bg-white p-8 rounded-lg shadow-lg text-center">
         <h3 class="text-2xl font-semibold mb-4">Stories of Faith in Action</h3>
-        <p id="success-story" class="italic fade-slide text-green-700 text-lg mb-6 h-24 flex items-center justify-center"></p>
+        <p id="success-story" class="italic fade-slide text-green-700 text-lg mb-6 h-18 flex items-center justify-center"></p>
         <a href="pages/resources.html" class="bg-green-700 hover:bg-green-800 text-white px-6 py-2 rounded shadow">
           Explore the Hub
         </a>
@@ -82,6 +82,7 @@
       ];
       let index = 0;
       const storyElement = document.getElementById("success-story");
+      storyElement.textContent = stories[0];
       function rotateStory() {
         storyElement.style.opacity = 0;
         setTimeout(() => {
@@ -91,7 +92,7 @@
         }, 1000);
       }
       rotateStory();
-      setInterval(rotateStory, 6000);
+      setInterval(rotateStory, 10000);
     </script>
 
     <script>
@@ -118,12 +119,13 @@
         }
       ];
 
-      let sectionIndex = 0;
+      let sectionIndex = 1;
       function rotateSection() {
         const title = document.getElementById("rotating-title");
         const para1 = document.getElementById("rotating-paragraph-1");
         const para2 = document.getElementById("rotating-paragraph-2");
 
+        title.style.transition = para1.style.transition = para2.style.transition = "opacity 1s ease-in-out";
         title.style.opacity = para1.style.opacity = para2.style.opacity = 0;
         setTimeout(() => {
           const data = sectionData[sectionIndex];
@@ -133,10 +135,20 @@
 
           title.style.opacity = para1.style.opacity = para2.style.opacity = 1;
           sectionIndex = (sectionIndex + 1) % sectionData.length;
-        }, 600);
+        }, 1000);
       }
 
-      setInterval(rotateSection, 8000);
+      // Initially show first section
+      const firstData = sectionData[0];
+      document.getElementById("rotating-title").textContent = firstData.title;
+      document.getElementById("rotating-paragraph-1").textContent = firstData.paragraph1;
+      document.getElementById("rotating-paragraph-2").textContent = firstData.paragraph2;
+
+      // Delay the first rotation by 5 seconds, then rotate every 10 seconds
+      setTimeout(() => {
+        rotateSection();
+        setInterval(rotateSection, 10000);
+      }, 5000);
     </script>
 
     <script>
