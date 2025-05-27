@@ -47,15 +47,17 @@
       align-items: flex-start;
       flex-shrink: 0;
       min-height: 72px;
+      max-height: 230px;
     }
     .option-btn {
-      padding: 8px 12px;
+      padding: 6px 8px;
       border: none;
       background: #4caf50;
       color: white;
       border-radius: 4px;
       cursor: pointer;
-      flex: 1 1 100%;
+      flex: 0 1 100%;
+      width: 100%;
     }
     .option-btn:hover {
       background: #43a047;
@@ -66,6 +68,14 @@
     }
     .back-btn:hover {
       background: #d5d5d5;
+    }
+    .full-width-btn {
+      flex: 0 0 100%;
+      width: 100%;
+    }
+    .shrinkable {
+      flex: 1 1 auto !important;
+      width: auto !important;
     }
   </style>
 </head>
@@ -207,6 +217,22 @@
       }
     }
 
+    function adjustButtonLayout() {
+      const inputArea = document.getElementById("input-area");
+      const maxH = parseInt(getComputedStyle(inputArea).maxHeight);
+      if (inputArea.scrollHeight > maxH) {
+        // enable shrinkable for regular option buttons
+        inputArea.querySelectorAll('.option-btn:not(.back-btn)').forEach(btn => {
+          btn.classList.add('shrinkable');
+        });
+      } else {
+        // revert to full width
+        inputArea.querySelectorAll('.option-btn.shrinkable').forEach(btn => {
+          btn.classList.remove('shrinkable');
+        });
+      }
+    }
+
     function showOptions(question) {
       const inputArea = document.getElementById("input-area");
       inputArea.innerHTML = "";
@@ -229,6 +255,7 @@
         };
         inputArea.appendChild(btn);
       });
+      adjustButtonLayout();
     }
 
     function nextQuestion() {
@@ -263,13 +290,13 @@
         const inputArea = document.getElementById("input-area");
 
         const linkBtn = document.createElement("button");
-        linkBtn.className = "option-btn back-btn";
+        linkBtn.className = "option-btn back-btn full-width-btn";
         linkBtn.textContent = "Visit Resource";
         linkBtn.onclick = () => window.open(rec.url, "_blank");
         inputArea.appendChild(linkBtn);
 
         const restartBtn = document.createElement("button");
-        restartBtn.className = "option-btn back-btn";
+        restartBtn.className = "option-btn back-btn full-width-btn";
         restartBtn.textContent = "Restart";
         restartBtn.onclick = () => {
           step = 0;
@@ -279,11 +306,13 @@
         };
         inputArea.appendChild(restartBtn);
 
+        adjustButtonLayout();
+
       } else {
         showMessage("Visit our Resource Directory to get started.");
         const inputArea = document.getElementById("input-area");
         const restartBtn = document.createElement("button");
-        restartBtn.className = "option-btn back-btn";
+        restartBtn.className = "option-btn back-btn full-width-btn";
         restartBtn.textContent = "Restart";
         restartBtn.onclick = () => {
           step = 0;
@@ -292,6 +321,8 @@
           nextQuestion();
         };
         inputArea.appendChild(restartBtn);
+
+        adjustButtonLayout();
       }
     }
 
