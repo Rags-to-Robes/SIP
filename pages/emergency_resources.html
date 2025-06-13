@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emergency | Rags to Robes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    a[title] {
+      position: relative;
+    }
+    a[title]:hover::after {
+      content: attr(title);
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 125%;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      min-width: 220px;
+      max-width: 300px;
+      white-space: normal;
+      font-size: 1rem;
+      text-align: center;
+      padding: 8px 12px;
+      line-height: 1.4;
+      border-radius: 4px;
+      z-index: 10;
+      opacity: 1;
+      visibility: visible;
+    }
+    a[title]::after {
+      content: '';
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+    }
+  </style>
+  <style>
+    body {
+      font-size: 1.125rem; /* 18px */
+    }
+    h2 {
+      font-size: 2.5rem; /* 40px */
+    }
+    h3 {
+      font-size: 1.75rem; /* 28px */
+    }
+    ul li a {
+      font-size: 1.125rem; /* 18px */
+    }
+  </style>
+</head>
+<body class="bg-green-50 text-gray-800">
+    <header class="bg-green-200 p-4 shadow">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+          <a href="../index.html" class="text-2xl font-bold text-green-900 hover:underline">Rags to Robes</a>
+          <nav class="mt-2 md:mt-0">
+            <ul class="flex gap-4 text-green-800 font-semibold">
+              <li><a href="community_events.html" class="hover:underline">Community and Events</a></li>
+              <li><a href="leadership_training.html" class="hover:underline">Leadership Training</a></li>
+              <li><a href="emergency_resources.html" class="hover:underline">Emergency Resources</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+    <main class="container mx-auto mt-10 px-4">
+      <h2 class="text-3xl font-bold text-center mb-6">Emergency Help</h2>
+      <p class="text-lg text-center mb-8 max-w-2xl mx-auto">
+        If someone needs immediate assistance, these resources can help. Explore services by category below.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+        <!-- Column 1 -->
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-green-900">Food & Shelter</h3>
+          <ul class="space-y-2 text-green-800">
+            <li>
+              <a href="https://www.utahfoodbank.org/get-help/" target="_blank" class="hover:underline font-semibold" title="Provides free groceries and meals through local food pantries and mobile pantries. Up to 3-5 days worth of food per visit.">Utah Food Bank</a>
+            </li>
+            <li>
+              <a href="https://rescuesaltlake.org/" target="_blank" class="hover:underline font-semibold" title="Emergency shelter beds, hot meals (breakfast, lunch, dinner), clothing, and hygiene kits for homeless individuals.">Rescue Mission Salt Lake</a>
+            </li>
+            <li>
+              <a href="https://rescuesaltlake.org/womens-center/" target="_blank" class="hover:underline font-semibold" title="Shelter and recovery services for homeless women and children, including meals and counseling.">Rescue Mission Women's Center</a>
+            </li>
+            <li>
+              <a href="https://utahvalleyrefugees.org/" target="_blank" class="hover:underline font-semibold" title="Support services including food, clothing, housing assistance, and employment support for refugees in Utah Valley.">Utah Valley Refugees</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 2 -->
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-green-900">Counseling & Support</h3>
+          <ul class="space-y-2 text-green-800">
+            <li>
+              <a href="https://pregnancyresource.net/" target="_blank" class="hover:underline font-semibold" title="Free pregnancy tests, ultrasounds, counseling, and material assistance (baby supplies, maternity clothes).">Pregnancy Resource Center</a>
+            </li>
+            <li>
+              <a href="https://arcadiacounseling.com/" target="_blank" class="hover:underline font-semibold" title="Counseling services for individuals and families struggling with mental health, trauma, and addiction. Sliding scale available.">Arcadia Counseling</a>
+            </li>
+            <li>
+              <a href="https://lifelineutah.com/" target="_blank" class="hover:underline font-semibold" title="Faith-based counseling services for marriage, family, addiction recovery, and mental health.">Lifeline Christian Counseling</a>
+            </li>
+            <li>
+              <a href="https://pathwaysreallife.com/" target="_blank" class="hover:underline font-semibold" title="Comprehensive outpatient counseling for addiction, trauma, and mental health. Specialized programs available.">Pathways Real Life Recovery</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-green-900">Crisis Help</h3>
+          <ul class="space-y-2 text-green-800">
+            <li>
+              <a href="https://liveonutah.org/" target="_blank" class="hover:underline font-semibold" title="Suicide prevention resources, crisis hotlines, and mental health support. Statewide initiative.">Live On Utah (Suicide)</a>
+            </li>
+            <li>
+              <a href="https://odysseyhouse.org/" target="_blank" class="hover:underline font-semibold" title="Residential and outpatient substance abuse treatment, mental health services, and transitional housing.">Odyssey House of Utah</a>
+            </li>
+            <li>
+              <a href="https://aspengrovehospital.com/" target="_blank" class="hover:underline font-semibold" title="Inpatient psychiatric care and crisis stabilization for adolescents and adults. 24/7 admissions.">Aspen Grove Behavioral Hospital</a>
+            </li>
+            <li>
+              <a href="https://therefugeutah.org/" target="_blank" class="hover:underline font-semibold" title="Emergency shelter, legal advocacy, and counseling for victims of domestic violence and sexual assault.">The Refuge Utah</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4 -->
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-green-900">Other Resources</h3>
+          <ul class="space-y-2 text-green-800">
+            <li>
+              <a href="https://centrohispanouc.org/" target="_blank" class="hover:underline font-semibold" title="Community services and resources for Spanish-speaking individuals, including legal aid, health, and employment help.">Centro Hispano in Provo</a>
+            </li>
+            <li>
+              <a href="https://nesutah.com/" target="_blank" class="hover:underline font-semibold" title="Support services for individuals with disabilities, including employment support and life skills training.">North Eastern Services</a>
+            </li>
+            <li>
+              <a href="https://providentliving.churchofjesuschrist.org/lds-family-services?lang=eng" target="_blank" class="hover:underline font-semibold" title="Counseling services, support groups, adoption services, and other family-related assistance offered through LDS Family Services.">Family Services (LDS Family Services)</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Contact Form Link -->
+      <div class="text-center mt-10">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScFgnu1zcDQlZbv5A1qoBpdSGJc79VBBeAhA4-fjgLiIOGAOw/viewform"
+           target="_blank"
+           class="inline-block bg-green-700 text-white font-semibold px-6 py-3 rounded hover:bg-green-800 transition">
+          Submit a New Resource
+        </a>
+      </div>
+    </main>
+
+  <footer class="bg-green-200 mt-20 p-4 text-center text-green-800">
+    <p>© 2025 Rags to Robes. All rights reserved.</p>
+  </footer>
+</body>
