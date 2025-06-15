@@ -25,12 +25,32 @@
       <section id="flowchart" class="mb-8 md:w-2/3">
         <h3 class="text-2xl font-semibold mb-4 text-center">Training Flowchart</h3>
         <p class="mb-4">This flowchart outlines the steps for leaders helping those with poverty, it is designed to empower individuals with a belief in a higher power, as well as themselves, so that lasting change can and will happen.</p>
-        <div style="position: relative; width: 100%; height: 0; padding-top: 75.0000%;
-          padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
-          border-radius: 8px; will-change: transform;">
-          <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-            src="https://www.canva.com/design/DAGqJgDUlFA/6QUBnFuKbaN-m7rZIAigPQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-          </iframe>
+        <div id="training-flow" class="flex flex-col items-center max-w-md mx-auto">
+          <div onclick="toggleInfo('step1')" class="bg-white w-full p-4 rounded-lg shadow cursor-pointer">
+            <h4 class="font-semibold text-center">Step 1: Build Trust</h4>
+            <p id="step1" class="mt-2 text-sm text-gray-700 hidden">Listen to community members and establish a foundation of respect.</p>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 my-2 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+          <div onclick="toggleInfo('step2')" class="bg-white w-full p-4 rounded-lg shadow cursor-pointer">
+            <h4 class="font-semibold text-center">Step 2: Assess Needs</h4>
+            <p id="step2" class="mt-2 text-sm text-gray-700 hidden">Work with partners to identify the most urgent areas for support.</p>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 my-2 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+          <div onclick="toggleInfo('step3')" class="bg-white w-full p-4 rounded-lg shadow cursor-pointer">
+            <h4 class="font-semibold text-center">Step 3: Provide Training</h4>
+            <p id="step3" class="mt-2 text-sm text-gray-700 hidden">Offer resources and guidance tailored to each individual's situation.</p>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 my-2 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+          <div onclick="toggleInfo('step4')" class="bg-white w-full p-4 rounded-lg shadow cursor-pointer">
+            <h4 class="font-semibold text-center">Step 4: Empower Community</h4>
+            <p id="step4" class="mt-2 text-sm text-gray-700 hidden">Celebrate successes and encourage ongoing leadership development.</p>
+          </div>
         </div>
       </section>
       <section id="submit-contact" class="mb-8 flex-1 md:w-1/3">
@@ -46,5 +66,13 @@
   <footer class="bg-green-200 mt-20 p-4 text-center text-green-800">
     <p>© 2025 Rags to Robes. All rights reserved.</p>
   </footer>
+  <script>
+    function toggleInfo(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.toggle('hidden');
+      }
+    }
+  </script>
 </body>
 </html>
