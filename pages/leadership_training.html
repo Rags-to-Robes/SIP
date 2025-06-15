@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emergency | Rags to Robes</title>
+  <title>Leadership Training | Rags to Robes</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-green-50 text-gray-800">
@@ -24,13 +24,66 @@
     <div class="flex flex-col md:flex-row gap-8">
       <section id="flowchart" class="mb-8 md:w-2/3">
         <h3 class="text-2xl font-semibold mb-4 text-center">Training Flowchart</h3>
-        <p class="mb-4">This flowchart outlines the steps for leaders helping those with poverty, it is designed to empower individuals with a belief in a higher power, as well as themselves, so that lasting change can and will happen.</p>
-        <div style="position: relative; width: 100%; height: 0; padding-top: 75.0000%;
-          padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
-          border-radius: 8px; will-change: transform;">
-          <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-            src="https://www.canva.com/design/DAGqJgDUlFA/6QUBnFuKbaN-m7rZIAigPQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-          </iframe>
+        <p class="mb-4">This flowchart outlines the steps for leaders helping those with poverty. Click on each step to learn more.</p>
+        <div id="training-flowchart" class="flex flex-col items-center space-y-2">
+          <div class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-64 text-center" data-info="Food insecurity, clothing, housing needs, medical problems, addiction, withdrawing from community.">
+            1. Identify support indicators
+            <div class="absolute z-10 hidden group-hover:block bg-green-100 border border-green-300 text-sm p-2 rounded shadow-lg w-64 -left-72 top-0">
+              Food insecurity, clothing, housing needs, medical problems, addiction, withdrawing from community.
+            </div>
+          </div>
+          <div class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-64 text-center" data-info="Food, clothing, shelter, medical care, addiction help, community connection.">
+            2. Address urgent needs
+            <div class="absolute z-10 hidden group-hover:block bg-green-100 border border-green-300 text-sm p-2 rounded shadow-lg w-64 -left-72 top-0">
+              Food, clothing, shelter, medical care, addiction help, community connection.
+            </div>
+          </div>
+          <div class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-64 text-center" data-info="Determine if they are poor or needy to guide next steps.">
+            3. Assess status
+            <div class="absolute z-10 hidden group-hover:block bg-green-100 border border-green-300 text-sm p-2 rounded shadow-lg w-64 -left-72 top-0">
+              Determine if they are poor or needy to guide next steps.
+            </div>
+          </div>
+          <div class="flex w-full justify-center items-start gap-24 mt-6">
+            <!-- Left branch: Poor -->
+            <div class="flex flex-col items-center space-y-4 w-1/2">
+              <div class="text-green-600 text-3xl select-none rotate-45 mb-2">▼</div>
+              <div class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-64 text-center" data-info="Establish a relationship and/or assign a mentor.">
+                Assign mentor
+                <div class="absolute z-10 hidden group-hover:block bg-green-100 border border-green-300 text-sm p-2 rounded shadow-lg w-64 left-full top-0 ml-2">
+                  Establish a relationship and/or assign a mentor.
+                </div>
+              </div>
+              <div class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-64 text-center" data-info="Motivate using spiritual resources, help shift identity, set goals.">
+                Shift their mindset
+                <div class="absolute z-10 hidden group-hover:block bg-green-100 border border-green-300 text-sm p-2 rounded shadow-lg w-64 left-full top-0 ml-2">
+                  Motivate using spiritual resources to encourage a belief in themselves and a higher purpose.
+                </div>
+              </div>
+              <div class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-64 text-center" data-info="Remove impediments such as addiction, health, or legal challenges.">
+                Address challenges
+                <div class="absolute z-10 hidden group-hover:block bg-green-100 border border-green-300 text-sm p-2 rounded shadow-lg w-64 left-full top-0 ml-2">
+                  Remove impediments such as addiction, health, or legal challenges.
+                </div>
+              </div>
+              <div class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-64 text-center" data-info="Help build skills and assets: education, job skills, financial management.">
+                Develop skills
+                <div class="absolute z-10 hidden group-hover:block bg-green-100 border border-green-300 text-sm p-2 rounded shadow-lg w-64 left-full top-0 ml-2">
+                  Help build skills and assets: education, job skills, financial management.
+                </div>
+              </div>
+            </div>
+            <!-- Right branch: Needy -->
+            <div class="flex flex-col items-center space-y-4 w-1/2">
+              <div class="text-green-600 text-3xl select-none -rotate-45 mb-2">▼</div>
+              <div class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-64 text-center" data-info="Provide support until they are back on their feet.">
+                Support recovery
+                <div class="absolute z-10 hidden group-hover:block bg-green-100 border border-green-300 text-sm p-2 rounded shadow-lg w-64 left-full top-0 ml-2">
+                  Provide support until they are back on their feet.
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section id="submit-contact" class="mb-8 flex-1 md:w-1/3">
@@ -46,5 +99,15 @@
   <footer class="bg-green-200 mt-20 p-4 text-center text-green-800">
     <p>© 2025 Rags to Robes. All rights reserved.</p>
   </footer>
+  <script>
+    document.querySelectorAll('#training-flowchart .step').forEach(step => {
+      step.addEventListener('click', () => {
+        const infoBox = document.getElementById('step-info');
+        const content = document.getElementById('step-info-content');
+        content.textContent = step.getAttribute('data-info');
+        infoBox.classList.remove('hidden');
+      });
+    });
+  </script>
 </body>
 </html>
