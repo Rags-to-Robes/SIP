@@ -88,13 +88,13 @@
 
   <script>
     const questionsMap = {
-      "We don’t know where to start": {
+      "We don't know where to start": {
         followUp: "Where would you like to begin?",
         options: [
-          "We don’t know where to start",
-          "People don’t believe poverty can be overcome",
-          "Our resources aren’t working",
-          "There’s a language gap between those in poverty and our leaders",
+          "We don't know where to start",
+          "People don't believe poverty can be overcome",
+          "Our resources aren't working",
+          "There's a language gap between those in poverty and our leaders",
           "We need examples of success",
           "We feel alone in this effort",
           "Identifying root causes",
@@ -102,7 +102,7 @@
           "Learning from another congregation"
         ]
       },
-      "People don’t believe poverty can be overcome": {
+      "People don't believe poverty can be overcome": {
         followUp: "What would help build hope?",
         options: [
           "Stories of what works",
@@ -115,7 +115,7 @@
           "Connection with another community"
         ]
       },
-      "Our resources aren’t working": {
+      "Our resources aren't working": {
         followUp: "What are you looking to change?",
         options: [
           "Better alignment with needs",
@@ -123,7 +123,7 @@
           "Training for volunteers"
         ]
       },
-      "There’s a language gap between those in poverty and our leaders": {
+      "There's a language gap between those in poverty and our leaders": {
         followUp: "What kind of language tools would help?",
         options: [
           "Mindset guides",
@@ -150,19 +150,19 @@
     };
 
     const recommendations = {
-      "We don’t know where to start": {
+      "We don't know where to start": {
         text: "Check out the Congregational Startup Guide.",
         url: "https://example.com/startup-guide"
       },
-      "People don’t believe poverty can be overcome": {
+      "People don't believe poverty can be overcome": {
         text: "Read our Hope-Building Stories collection.",
         url: "https://example.com/hope-stories"
       },
-      "Our resources aren’t working": {
+      "Our resources aren't working": {
         text: "Explore our Resource Effectiveness Toolkit.",
         url: "https://example.com/resource-toolkit"
       },
-      "There’s a language gap between those in poverty and our leaders": {
+      "There's a language gap between those in poverty and our leaders": {
         text: "Use our Language Framing Workshop.",
         url: "https://example.com/language-workshop"
       },
@@ -184,8 +184,10 @@
       const bubble = document.createElement("div");
       bubble.className = "bubble bot";
       bubble.textContent = text;
-      chat.appendChild(bubble);
-      chat.scrollTop = chat.scrollHeight;
+      setTimeout(() => {
+        chat.appendChild(bubble);
+        chat.scrollTop = chat.scrollHeight;
+      }, 500);
     }
 
     function showResponse(text) {
@@ -330,5 +332,5 @@
     window.onload = nextQuestion;
   </script>
 </body>
-<script src="../js/script.js"></script>
+<script src="../js/scripts.js"></script>
 </html>

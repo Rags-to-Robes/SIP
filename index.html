@@ -9,6 +9,7 @@
       .fade-slide {
         transition: opacity 1s ease-in-out, transform 1s ease-in-out;
       }
+      a:hover { text-decoration-color: #047857; }
     </style>
   </head>
   <body class="bg-green-50 text-gray-800">
@@ -29,28 +30,24 @@
     <!-- Main -->
     <main class="container mx-auto mt-10 px-4">
 
-      <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-12">
-        <div class="bg-white p-8 rounded-lg shadow-lg space-y-8 max-w-3xl mx-auto">
-          <h2 class="text-xl font-bold mb-4">Faith-Rooted Collaboration Against Generational Poverty</h2>
-          <p class="bg-green-800 border-l-4 border-green-900 text-white pt-4 pb-6 px-6 rounded-lg">
-            Rags to Robes is a unifying platform for faith-based and values-driven communities to share transformative solutions to generational poverty. From churches to mosques, synagogues to temples, we believe that diverse spiritual wisdom can light the path toward lasting change.
-          </p>
-          <p 
-            id="rotating-title" class="text-xl font-semibold mb-2 text-left">Mindset Matters: A New Way to Talk About Poverty</h3>
-          </p>
+      <section class="flex justify-center mb-12">
+        <div class="bg-white p-8 rounded-lg shadow-lg max-w-5xl w-full grid md:grid-cols-2 gap-8 items-center">
+          <div class="space-y-8">
+            <h2 class="text-xl font-bold">Faith-Rooted Collaboration Against Generational Poverty</h2>
+            <p class="bg-green-800 border-l-4 border-green-900 text-white pt-4 pb-6 px-6 rounded-lg">
+              Rags to Robes is a unifying platform for faith-based and values-driven communities to share transformative solutions to generational poverty. From churches to mosques, synagogues to temples, we believe that diverse spiritual wisdom can light the path toward lasting change.
+            </p>
+            <p id="rotating-title" class="text-xl font-semibold">Mindset Matters: A New Way to Talk About Poverty</p>
             <div class="text-md mb-6 bg-green-800 min-h-[168px] border-green-900 text-white pt-4 pb-6 px-6 rounded-lg">
-            <p id="rotating-paragraph-1" class="mb-4">
-              Too often, the solution to poverty is framed as “more”—more resources, more money, more programs. But what if the missing piece is language and alignment?
-            </p>
-            <p id="rotating-paragraph-2">
-              Rags to Robes shifts the conversation. We believe the solution lies not only in material aid but in a shared mindset.
-            </p>
+              <p id="rotating-paragraph-1" class="mb-4">
+                Too often, the solution to poverty is framed as "more"—more resources, more money, more programs. But what if the missing piece is language and alignment?
+              </p>
+              <p id="rotating-paragraph-2">
+                Rags to Robes shifts the conversation. We believe the solution lies not only in material aid but in a shared mindset.
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="flex justify-center px-8">
-          <div class="bg-white p-4 rounded-lg shadow-lg max-w-3xl w-full">
-            <img src="attachments/teamwork-wins-together-stockcake.jpg" alt="Teamwork illustration" class="rounded-lg w-full object-cover max-h-[800px]">
-          </div>
+          <img src="attachments/teamwork-wins-together-stockcake.jpg" alt="Teamwork illustration" class="rounded-lg w-full object-cover max-h-[800px]">
         </div>
       </section>
 
@@ -61,7 +58,7 @@
           <p id="success-story" class="italic fade-slide text-green-700 text-lg mb-6 text-left h-18 flex items-center justify-center"></p>
           </a>
         </div>
-        <a href="pages/resources.html" class="bg-green-800 hover:bg-green-700 text-white px-6 py-2 rounded shadow mx-auto block text-center">
+        <a href="pages/resources.html" class="bg-green-800 hover:bg-green-700 text-white px-6 py-2 rounded shadow mx-auto inline-block text-center">
           Explore the Hub
         </a>
       </section>
@@ -73,11 +70,12 @@
     </button>
 
     <div id="chat-container" class="hidden fixed bottom-20 right-6 w-[350px] h-[500px] bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+      <button id="chat-close" class="absolute top-2 right-2 text-gray-600 hover:text-black font-bold">&times;</button>
       <iframe src="pages/trainingchatbot.html" class="w-full h-full border-none"></iframe>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-green-200 mt-20 p-4 text-center text-green-800">
+    <footer class="bg-green-200 p-4 text-center text-green-800 fixed bottom-0 left-0 w-full">
       <p>© 2025 Rags to Robes. All rights reserved.</p>
     </footer>
 
@@ -162,9 +160,13 @@
     <script>
       const chatToggle = document.getElementById("chat-toggle");
       const chatContainer = document.getElementById("chat-container");
+      const chatClose = document.getElementById("chat-close");
 
       chatToggle.addEventListener("click", () => {
         chatContainer.classList.toggle("hidden");
+      });
+      chatClose.addEventListener("click", () => {
+        chatContainer.classList.add("hidden");
       });
     </script>
   </body>
