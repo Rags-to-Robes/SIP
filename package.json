@@ -1,13 +1,3 @@
 {
   "name": "rags-to-robes",
   "version": "1.0.0",
-  "description": "A website to support community resources, training, and emergency support.",
-  "scripts": {
-    "build": "mkdir -p dist && cp -r * dist/ && rm -rf dist/node_modules dist/package*.json",
-    "dev": "npx http-server -p 8000 -c-1",
-    "start": "npx http-server -p 8000 -c-1"
-  },
-  "keywords": ["community", "resources", "training", "emergency-support"],
-  "author": "",
-  "license": "ISC"
-}
