@@ -6,11 +6,11 @@
   <title>Emergency | Rags to Robes</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    a[title] {
+    a[data-tooltip] {
       position: relative;
     }
-    a[title]:hover::after {
-      content: attr(title);
+    a[data-tooltip]:hover::after {
+      content: attr(data-tooltip);
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
@@ -28,12 +28,6 @@
       z-index: 10;
       opacity: 1;
       visibility: visible;
-    }
-    a[title]::after {
-      content: '';
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
     }
   </style>
   <style>
@@ -59,101 +53,143 @@
             <ul class="flex gap-4 text-green-800 font-semibold">
               <li><a href="community_events.html" class="hover:underline">Community and Events</a></li>
               <li><a href="leadership_training.html" class="hover:underline">Leadership Training</a></li>
-              <li><a href="emergency_resources.html" class="hover:underline">Emergency Resources</a></li>
+              <li><a href="emergency_resources.html" class="hover:underline">Resources and Help</a></li>
             </ul>
           </nav>
         </div>
       </header>
 
     <main class="container mx-auto mt-10 px-4 ">
-      <h2 class="text-3xl font-bold text-center mb-6">Emergency Help</h2>
+      <h2 class="text-3xl font-bold text-center mb-6">Resources and Help</h2>
       <p class="text-lg text-center mb-8 max-w-2xl mx-auto">
-        If someone needs immediate assistance, these resources can help. Explore services by category below.
+        These resources are available to help. Explore services by category below.
       </p>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-        <!-- Column 1 -->
-        <div>
-          <h3 class="text-xl font-bold mb-4 text-green-900">Food & Shelter</h3>
-          <ul class="space-y-2 text-green-800">
-            <li>
-              <a href="https://www.utahfoodbank.org/get-help/" target="_blank" class="hover:underline font-semibold" title="Provides free groceries and meals through local food pantries and mobile pantries. Up to 3-5 days worth of food per visit.">Utah Food Bank</a>
-            </li>
-            <li>
-              <a href="https://rescuesaltlake.org/" target="_blank" class="hover:underline font-semibold" title="Emergency shelter beds, hot meals (breakfast, lunch, dinner), clothing, and hygiene kits for homeless individuals.">Rescue Mission Salt Lake</a>
-            </li>
-            <li>
-              <a href="https://rescuesaltlake.org/womens-center/" target="_blank" class="hover:underline font-semibold" title="Shelter and recovery services for homeless women and children, including meals and counseling.">Rescue Mission Women's Center</a>
-            </li>
-            <li>
-              <a href="https://utahvalleyrefugees.org/" target="_blank" class="hover:underline font-semibold" title="Support services including food, clothing, housing assistance, and employment support for refugees in Utah Valley.">Utah Valley Refugees</a>
-            </li>
-          </ul>
+      <!-- Updated Community Resource Directory Section -->
+      <section class="mt-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-left">
+          <!-- Food & Shelter -->
+          <div>
+            <h3 class="text-xl font-bold mb-4 text-green-900">Food & Shelter</h3>
+            <ul class="space-y-2 text-green-800">
+              <li>
+                <a href="https://tabithasway.org/" target="_blank" class="hover:underline font-semibold text-green-800"
+                   data-tooltip="Spanish Fork contact info">Tabitha's Way</a>
+              </li>
+              <li>
+                <a href="https://www.utahfoodbank.org/get-help/" target="_blank" class="hover:underline font-semibold text-green-800"
+                   data-tooltip="Provides free groceries and meals through local food pantries and mobile pantries. Up to 3-5 days worth of food per visit.">Utah Food Bank</a>
+              </li>
+              <li>
+                <a href="https://rescuesaltlake.org/" target="_blank" class="hover:underline font-semibold text-green-800"
+                   data-tooltip="Emergency shelter beds, hot meals (breakfast, lunch, dinner), clothing, and hygiene kits for homeless individuals.">Rescue Mission Salt Lake</a>
+              </li>
+              <li>
+                <a href="https://utahvalleyrefugees.org/" target="_blank" class="hover:underline font-semibold text-green-800"
+                   data-tooltip="Support services including food, clothing, housing assistance, and employment support for refugees in Utah Valley.">Utah Valley Refugees</a>
+              </li>
+              <li>
+                <a href="https://mealsonwheels.utahcounty.gov/" target="_blank" class="hover:underline font-semibold text-green-800"
+                   data-tooltip="Home-delivered meals to seniors and people with disabilities in Utah County.">Meals on Wheels – Utah County</a>
+              </li>
+              <li>
+                <a href="https://communityactionprovo.org/" target="_blank" class="hover:underline font-semibold text-green-800"
+                   data-tooltip="Food pantry, housing assistance, and family development programs for Utah County residents.">Community Action Services & Food Bank</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Employment & Education -->
+          <div>
+            <h3 class="text-xl font-bold mb-4 text-green-900">Employment & Education</h3>
+            <ul class="space-y-2 text-green-800">
+              <li>
+                <a href="https://www.churchofjesuschrist.org/self-reliance/employment?lang=eng" target="_blank" class="hover:underline font-semibold text-green-800"
+                   data-tooltip="Job search, resume help, interview skills, and career planning. Open to all.">LDS Employment Resource Centers</a>
+              </li>
+              <li>
+                <a href="https://mtec.edu/" target="_blank" class="hover:underline font-semibold text-green-800"
+                   data-tooltip="Technical education and job training programs for adults and high school students.">MTech (Mountainland Technical College)</a>
+              </li>
+              <li>
+                <a href="https://www.uvu.edu/moneysuccess/" target="_blank" class="hover:underline font-semibold text-green-800"
+                   data-tooltip="Financial coaching, scholarships, and student support for financial wellness.">UVU Money Success Center</a>
+              </li>
+              <li>
+                <a href="https://jobs.utah.gov/" target="_blank" class="hover:underline font-semibold text-green-800"
+                   data-tooltip="Utah Department of Workforce Services: job listings, unemployment help, training, and more.">Utah Workforce Services</a>
+              </li>
+              <li>
+                <a href="https://www.provo.edu/adult-education/" target="_blank" class="hover:underline font-semibold text-green-800"
+                   data-tooltip="GED, ESL, and adult education classes for community members.">Provo Adult Education</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Health & Counseling -->
+          <div>
+            <h3 class="text-xl font-bold mb-4 text-green-900">Health & Counseling</h3>
+            <ul class="space-y-2 text-green-800">
+              <li>
+                <a href="https://addorecovery.com/" target="_blank" class="hover:underline font-semibold text-green-800"
+                   data-tooltip="Addiction recovery and therapy for individuals and families.">Addo Recovery</a>
+              </li>
+              <li>
+                <a href="https://www.uvu.edu/studenthealth/psychiatry.html" target="_blank" class="hover:underline font-semibold text-green-800"
+                   data-tooltip="UVU Clinic Psychiatry provides medication management and mental health support for students and community.">UV Clinic Psychiatry</a>
+              </li>
+              <li>
+                <a href="https://wasatch.org/" target="_blank" class="hover:underline font-semibold text-green-800"
+                   data-tooltip="Mental health counseling, crisis intervention, and substance use services for Utah County.">Wasatch Behavioral Health</a>
+              </li>
+              <li>
+                <a href="https://arcadiacounseling.com/" target="_blank" class="hover:underline font-semibold text-green-800"
+                   data-tooltip="Counseling services for individuals and families struggling with mental health, trauma, and addiction. Sliding scale available.">Arcadia Counseling</a>
+              </li>
+              <li>
+                <a href="https://lifelineutah.com/" target="_blank" class="hover:underline font-semibold text-green-800"
+                   data-tooltip="Faith-based counseling services for marriage, family, addiction recovery, and mental health.">Lifeline Christian Counseling</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Family & Advocacy -->
+          <div>
+            <h3 class="text-xl font-bold mb-4 text-green-900">Family & Advocacy</h3>
+            <ul class="space-y-2 text-green-800">
+              <li>
+                <a href="https://www.utahcounty.gov/Dept/Sheriff/VictimServices/index.asp" target="_blank" class="hover:underline font-semibold text-green-800"
+                   data-tooltip="Advocacy, support, and resources for victims of crime in Utah County.">Utah County Sheriff Victim Services</a>
+              </li>
+              <li>
+                <a href="https://www.grandfamiliesutah.org/" target="_blank" class="hover:underline font-semibold text-green-800"
+                   data-tooltip="Support groups, legal resources, and advocacy for grandparents raising grandchildren.">Grandfamilies of Utah County</a>
+              </li>
+              <li>
+                <a href="https://www.liveyourdream.org/" target="_blank" class="hover:underline font-semibold text-green-800"
+                   data-tooltip="Scholarships, mentoring, and advocacy for single mothers in Utah County.">Live Your Dream Foundation</a>
+              </li>
+              <li>
+                <a href="https://therefugeutah.org/" target="_blank" class="hover:underline font-semibold text-green-800"
+                   data-tooltip="Emergency shelter, legal advocacy, and counseling for victims of domestic violence and sexual assault.">The Refuge Utah</a>
+              </li>
+              <li>
+                <a href="https://providentliving.churchofjesuschrist.org/lds-family-services?lang=eng" target="_blank" class="hover:underline font-semibold text-green-800"
+                   data-tooltip="Counseling services, support groups, adoption services, and other family-related assistance offered through LDS Family Services.">Family Services (LDS Family Services)</a>
+              </li>
+            </ul>
+          </div>
         </div>
+      </section>
 
-        <!-- Column 2 -->
-        <div>
-          <h3 class="text-xl font-bold mb-4 text-green-900">Counseling & Support</h3>
-          <ul class="space-y-2 text-green-800">
-            <li>
-              <a href="https://pregnancyresource.net/" target="_blank" class="hover:underline font-semibold" title="Free pregnancy tests, ultrasounds, counseling, and material assistance (baby supplies, maternity clothes).">Pregnancy Resource Center</a>
-            </li>
-            <li>
-              <a href="https://arcadiacounseling.com/" target="_blank" class="hover:underline font-semibold" title="Counseling services for individuals and families struggling with mental health, trauma, and addiction. Sliding scale available.">Arcadia Counseling</a>
-            </li>
-            <li>
-              <a href="https://lifelineutah.com/" target="_blank" class="hover:underline font-semibold" title="Faith-based counseling services for marriage, family, addiction recovery, and mental health.">Lifeline Christian Counseling</a>
-            </li>
-            <li>
-              <a href="https://pathwaysreallife.com/" target="_blank" class="hover:underline font-semibold" title="Comprehensive outpatient counseling for addiction, trauma, and mental health. Specialized programs available.">Pathways Real Life Recovery</a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Column 3 -->
-        <div>
-          <h3 class="text-xl font-bold mb-4 text-green-900">Crisis Help</h3>
-          <ul class="space-y-2 text-green-800">
-            <li>
-              <a href="https://liveonutah.org/" target="_blank" class="hover:underline font-semibold" title="Suicide prevention resources, crisis hotlines, and mental health support. Statewide initiative.">Live On Utah (Suicide)</a>
-            </li>
-            <li>
-              <a href="https://odysseyhouse.org/" target="_blank" class="hover:underline font-semibold" title="Residential and outpatient substance abuse treatment, mental health services, and transitional housing.">Odyssey House of Utah</a>
-            </li>
-            <li>
-              <a href="https://aspengrovehospital.com/" target="_blank" class="hover:underline font-semibold" title="Inpatient psychiatric care and crisis stabilization for adolescents and adults. 24/7 admissions.">Aspen Grove Behavioral Hospital</a>
-            </li>
-            <li>
-              <a href="https://therefugeutah.org/" target="_blank" class="hover:underline font-semibold" title="Emergency shelter, legal advocacy, and counseling for victims of domestic violence and sexual assault.">The Refuge Utah</a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Column 4 -->
-        <div>
-          <h3 class="text-xl font-bold mb-4 text-green-900">Other Resources</h3>
-          <ul class="space-y-2 text-green-800">
-            <li>
-              <a href="https://centrohispanouc.org/" target="_blank" class="hover:underline font-semibold" title="Community services and resources for Spanish-speaking individuals, including legal aid, health, and employment help.">Centro Hispano in Provo</a>
-            </li>
-            <li>
-              <a href="https://nesutah.com/" target="_blank" class="hover:underline font-semibold" title="Support services for individuals with disabilities, including employment support and life skills training.">North Eastern Services</a>
-            </li>
-            <li>
-              <a href="https://providentliving.churchofjesuschrist.org/lds-family-services?lang=eng" target="_blank" class="hover:underline font-semibold" title="Counseling services, support groups, adoption services, and other family-related assistance offered through LDS Family Services.">Family Services (LDS Family Services)</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Contact Form Link -->
+        <!-- Contact Form Link -->
       <div class="text-center mt-10">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScFgnu1zcDQlZbv5A1qoBpdSGJc79VBBeAhA4-fjgLiIOGAOw/viewform"
-           target="_blank"
-           class="inline-block bg-green-700 text-white font-semibold px-6 py-3 rounded hover:bg-green-800 transition">
+            target="_blank"
+            class="inline-block bg-green-700 text-white font-semibold px-6 py-3 rounded hover:bg-green-800 transition">
           Submit a New Resource
         </a>
       </div>
+
     </main>
+
+    
 
   <footer class="bg-green-200 mt-20 p-4 text-center text-green-800">
     <p>© 2025 Rags to Robes. All rights reserved.</p>
