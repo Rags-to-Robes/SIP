@@ -25,21 +25,65 @@
       <section id="flowchart" class="mb-8 md:w-2/3">
         <h3 class="text-2xl font-semibold mb-4 text-center">Training Flowchart</h3>
         <p class="mb-4">This flowchart outlines the steps for leaders helping those with poverty. Click on each step to learn more.</p>
-        <div id="training-flowchart" class="flex flex-col items-center space-y-4">
-          <div class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer" data-info="Look for red flags to identify those in need.">1. Identify Red Flags</div>
-          <div class="text-green-600">▼</div>
-          <div class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer" data-info="Meet immediate needs with links to local charities and food banks.">2. Meet Immediate Needs</div>
-          <div class="text-green-600">▼</div>
-          <div class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer" data-info="Determine if they are poor (lacking skills and assets) or needy (temporarily struggling); connect them with job search and financial assistance resources.">3. Determine Status</div>
-          <div class="text-green-600">▼</div>
-          <div class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer" data-info="Establish a relationship or assign a mentor to empower self‑reliance using spiritual and community resources.">4. Build Relationship</div>
-          <div class="text-green-600">▼</div>
-          <div class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer" data-info="Remove impediments such as addiction, health, or legal challenges. Example services: Food and Care Coalition, SDA and RMU pro bono medical programs.">5. Remove Impediments</div>
-          <div class="text-green-600">▼</div>
-          <div class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer" data-info="Help them build skills and assets—education, job skills, financial management, and service opportunities. Examples: Alpine Bible Church financial advisors, Church self‑reliance programs, BYU Pathways, DI.">6. Build Skills</div>
-        </div>
-        <div id="step-info" class="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg hidden">
-          <span id="step-info-content" class="block"></span>
+        <div id="training-flowchart" class="flex flex-col items-center space-y-2">
+          <div class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-64 text-center" data-info="Food insecurity, clothing, housing needs, medical problems, addiction, withdrawing from community.">
+            1. Identify support indicators
+            <div class="absolute z-10 hidden group-hover:block bg-green-100 border border-green-300 text-sm p-2 rounded shadow-lg w-64 -left-72 top-0">
+              Food insecurity, clothing, housing needs, medical problems, addiction, withdrawing from community.
+            </div>
+          </div>
+          <div class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-64 text-center" data-info="Food, clothing, shelter, medical care, addiction help, community connection.">
+            2. Address urgent needs
+            <div class="absolute z-10 hidden group-hover:block bg-green-100 border border-green-300 text-sm p-2 rounded shadow-lg w-64 -left-72 top-0">
+              Food, clothing, shelter, medical care, addiction help, community connection.
+            </div>
+          </div>
+          <div class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-64 text-center" data-info="Determine if they are poor or needy to guide next steps.">
+            3. Assess status
+            <div class="absolute z-10 hidden group-hover:block bg-green-100 border border-green-300 text-sm p-2 rounded shadow-lg w-64 -left-72 top-0">
+              Determine if they are poor or needy to guide next steps.
+            </div>
+          </div>
+          <div class="flex w-full justify-center items-start gap-24 mt-6">
+            <!-- Left branch: Poor -->
+            <div class="flex flex-col items-center space-y-4 w-1/2">
+              <div class="text-green-600 text-3xl select-none rotate-45 mb-2">▼</div>
+              <div class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-64 text-center" data-info="Establish a relationship and/or assign a mentor.">
+                Assign mentor
+                <div class="absolute z-10 hidden group-hover:block bg-green-100 border border-green-300 text-sm p-2 rounded shadow-lg w-64 left-full top-0 ml-2">
+                  Establish a relationship and/or assign a mentor.
+                </div>
+              </div>
+              <div class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-64 text-center" data-info="Motivate using spiritual resources, help shift identity, set goals.">
+                Shift their mindset
+                <div class="absolute z-10 hidden group-hover:block bg-green-100 border border-green-300 text-sm p-2 rounded shadow-lg w-64 left-full top-0 ml-2">
+                  Motivate using spiritual resources to encourage a belief in themselves and a higher purpose.
+                </div>
+              </div>
+              <div class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-64 text-center" data-info="Remove impediments such as addiction, health, or legal challenges.">
+                Address challenges
+                <div class="absolute z-10 hidden group-hover:block bg-green-100 border border-green-300 text-sm p-2 rounded shadow-lg w-64 left-full top-0 ml-2">
+                  Remove impediments such as addiction, health, or legal challenges.
+                </div>
+              </div>
+              <div class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-64 text-center" data-info="Help build skills and assets: education, job skills, financial management.">
+                Develop skills
+                <div class="absolute z-10 hidden group-hover:block bg-green-100 border border-green-300 text-sm p-2 rounded shadow-lg w-64 left-full top-0 ml-2">
+                  Help build skills and assets: education, job skills, financial management.
+                </div>
+              </div>
+            </div>
+            <!-- Right branch: Needy -->
+            <div class="flex flex-col items-center space-y-4 w-1/2">
+              <div class="text-green-600 text-3xl select-none -rotate-45 mb-2">▼</div>
+              <div class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-64 text-center" data-info="Provide support until they are back on their feet.">
+                Support recovery
+                <div class="absolute z-10 hidden group-hover:block bg-green-100 border border-green-300 text-sm p-2 rounded shadow-lg w-64 left-full top-0 ml-2">
+                  Provide support until they are back on their feet.
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section id="submit-contact" class="mb-8 flex-1 md:w-1/3">
