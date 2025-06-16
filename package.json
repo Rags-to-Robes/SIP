@@ -1,3 +1,7 @@
 {
   "name": "rags-to-robes",
   "version": "1.0.0",
+  "dependencies": {
+    "jest": "^30.0.0"
+  }
+}
