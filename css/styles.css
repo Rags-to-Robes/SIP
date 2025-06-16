@@ -24,6 +24,17 @@ nav a {
   text-decoration: none;
   color: #2b4a2c;
   font-weight: bold;
+  display: inline-block;      /* Add this */
+  padding: 0.5em 1em;         /* Add this for spacing */
+  border: 2px solid #2b4a2c;  /* Add this for border */
+  border-radius: 0.5em;       /* Optional: rounded corners */
+  background: #eaf6e4;        /* Optional: background for contrast */
+  transition: box-shadow 0.2s, color 0.2s;
+}
+
+nav a:hover {
+  color: #17491e;
+  box-shadow: 0 2px 8px rgba(44, 94, 54, 0.15);
 }
 
 footer {
@@ -31,4 +42,22 @@ footer {
   padding: 1em;
   background-color: #c1d7ae;
   margin-top: 2em;
+}
+
+.nav-link {
+  font-weight: bold;
+  text-decoration: none;
+  color: #2b4a2c;
+  background: #eaf6e4;
+  display: inline-block;
+  transition: box-shadow 0.2s, color 0.2s;
+}
+.nav-link:hover {
+  color: #17491e;
+}
+
+.flowchart-container {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 0 auto;
 }
