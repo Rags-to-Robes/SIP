@@ -21,20 +21,17 @@
         <nav class="mt-2 md:mt-0">
           <ul class="flex gap-6 text-green-700 font-semibold">
             <li>
-              <a href="pages/community_events.html"
-                class="nav-link text-center px-3 py-2 text-lg border-2 border-green-700 rounded transition transform hover:-translate-y-1 hover:shadow-lg hover:text-green-900 inline-block">
+              <a href="pages/community_events.html" class="nav-link text-center px-3 py-2 text-lg border-2 border-green-700 rounded transition transform hover:-translate-y-1 hover:shadow-lg hover:text-green-900 inline-block">
                 Community Calendar
               </a>
             </li>
             <li>
-              <a href="pages/leadership_training.html"
-                class="nav-link text-center px-3 py-2 text-lg border-2 border-green-700 rounded transition transform hover:-translate-y-1 hover:shadow-lg hover:text-green-900 inline-block">
-                Leadership Training
+              <a href="pages/leadership_training.html" class="nav-link text-center px-3 py-2 text-lg border-2 border-green-700 rounded transition transform hover:-translate-y-1 hover:shadow-lg hover:text-green-900 inline-block">
+                Training
               </a>
             </li>
             <li>
-              <a href="pages/emergency_resources.html"
-                class="nav-link text-center px-3 py-2 text-lg border-2 border-green-700 rounded transition transform hover:-translate-y-1 hover:shadow-lg hover:text-green-900 inline-block">
+              <a href="pages/emergency_resources.html" class="nav-link text-center px-3 py-2 text-lg border-2 border-green-700 rounded transition transform hover:-translate-y-1 hover:shadow-lg hover:text-green-900 inline-block">
                 Resources and Help
               </a>
             </li>
@@ -45,54 +42,133 @@
 
     <!-- Main -->
     <main class="flex-grow container mx-auto mt-10 px-4">
-
       <section class="mb-12">
-        <div class="bg-white p-8 rounded-lg shadow-lg space-y-8 max-w-6xl mx-auto flex flex-col lg:flex-row gap-8 items-stretch">
-          <!-- Left Column: Text and Stories -->
-          <div class="flex-1 flex flex-col justify-between space-y-8 h-full">
+        <div class="bg-white p-8 rounded-lg shadow-lg max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 items-start">
+          
+          <!-- Left Column -->
+          <div class="flex-1 flex flex-col space-y-8">
             <div class="space-y-4">
-              <h2 class="text-xl font-bold mb-4">Congregations Can Solve Poverty</h2>
+              <h3 class="text-2xl font-semibold text-left self-start">
+                Together, Congregations Can Solve Poverty
+              </h3>
               <p class="bg-green-800 border-l-4 border-green-900 text-white pt-4 pb-6 px-6 rounded-lg">
-                Rags to Robes is a platform for faith-based leaders and congregation members to learn and share transformative solutions to generational poverty.
+                Rags to Robes is a platform for faith-based leaders and congregation members
+                to learn and share transformative solutions to consistent, generational poverty.
               </p>
-              <p 
-                id="rotating-title" class="text-xl font-semibold mb-2 text-left">
-              </p>
+              <p id="rotating-title" class="text-xl font-semibold mb-2 text-left"></p>
               <div class="text-md mb-6 bg-green-200 text-green-900 pt-4 pb-6 px-6 rounded-lg">
                 <p id="rotating-paragraph-1" class="mb-4"></p>
                 <p id="rotating-paragraph-2"></p>
               </div>
             </div>
-            <!-- Stories of Faith in Action -->
-            <!-- <p class="text-xl font-semibold mb-2 text-left">Stories of Faith in Action</p>
-              <div class="text-md mb-6 bg-green-800 border-green-900 text-white pt-4 pb-6 px-6 rounded-lg">
-                <p id="success-story" ></p>
-              </div> -->
-          </div>
-          <!-- Right Column: Image  -->
-          <div class="flex-1 flex items-stretch">
-            <div class="bg-white p-4 rounded-lg shadow-lg max-w-3xl w-full h-full">
-              <img src="attachments/People_Together.jpg" alt="Teamwork illustration" class="rounded-lg w-full h-full object-cover">
+            <!-- (Optional) Stories of Faith in Action -->
+            <!--
+            <p class="text-xl font-semibold mb-2 text-left">Stories of Faith in Action</p>
+            <div class="text-md mb-6 bg-green-800 border-green-900 text-white pt-4 pb-6 px-6 rounded-lg">
+              <p id="success-story"></p>
             </div>
+            -->
           </div>
+          
+          <!-- Right Column (Flowchart) -->
+          <section id="flowchart" class="w-full lg:w-2/3">
+            <h3 class="text-2xl font-semibold mb-4 text-center self-start">
+              Poverty Disruption Flowchart
+            </h3>
+            <p class="mb-4 pl-6 text-green-800">
+              This flowchart outlines the steps for leaders helping those with poverty.
+              Click on each step to learn more.
+            </p>
+            <div class="relative w-full">
+              <div id="training-flowchart" class="flex flex-col items-center space-y-2 min-w-[350px]">
+                <div
+                  class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-full max-w-xs text-center"
+                  data-info="Some indicators could include: food insecurity, clothing or housing needs, physical or mental health issues, addiction, or withdrawal from the community."
+                  data-step="1"
+                >
+                  1. Identify Indicators
+                </div>
+                <div
+                  class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-full max-w-xs text-center"
+                  data-info="Help provide or connect people to food, clothing, shelter, medical care, addiction help, community connection, and other immediate needs."
+                  data-step="2"
+                >
+                  2. Address urgent needs
+                </div>
+                <div
+                  class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-full max-w-xs text-center"
+                  data-info="Determine if they are 𝗽𝗼𝗼𝗿 (never been independent, lacks skills/resources) or 𝗻𝗲𝗲𝗱𝘆 (temporarily struggling despite past independence) to guide next steps."
+                  data-step="3"
+                >
+                  3. Assess poverty status
+                </div>
+                <div class="flex w-full justify-center items-start gap-6 md:gap-24 mt-6">
+                  <div class="w-1/2 text-center text-green-700 font-semibold mb-2">POOR</div>
+                  <div class="w-1/2 text-center text-green-700 font-semibold mb-2">NEEDY</div>
+                </div>
+                <div class="flex w-full justify-center items-start gap-24 mt-6">
+                  <div class="flex flex-col items-center space-y-4 w-1/2">
+                    <div
+                      class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-full max-w-xs text-center"
+                      data-info="Establish a relationship and/or connect them with a mentor."
+                      data-step="4"
+                    >
+                      Connect with mentor
+                    </div>
+                    <div
+                      class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-full max-w-xs text-center"
+                      data-info="Build motivation for long-term sustainable change by using spiritual resources to shape a clear vision and higher purpose."
+                      data-step="5"
+                    >
+                      Shift mindsets
+                    </div>
+                    <div
+                      class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-full max-w-xs text-center"
+                      data-info="Work toward removing impediments such as addiction, health, or legal challenges."
+                      data-step="6"
+                    >
+                      Address challenges
+                    </div>
+                    <div
+                      class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-full max-w-xs text-center"
+                      data-info="Build skills and assets, such as: increasing education, gaining certifications, developing job skills, practicing financial management, and consistent goal setting."
+                      data-step="7"
+                    >
+                      Develop skills
+                    </div>
+                  </div>
+                  <div class="flex flex-col items-center space-y-4 w-1/2">
+                    <div
+                      class="step bg-white border-2 border-green-600 p-4 rounded-lg shadow cursor-pointer relative group w-full max-w-xs text-center"
+                      data-info="Provide support until they are back on their feet."
+                      data-step="8"
+                    >
+                      Support recovery
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div
+                id="step-info"
+                class="hidden absolute bottom-0 right-0 bg-green-200 rounded-lg shadow-xl p-4 text-green-800 z-30 w-1/2 mt-4 ml-auto"
+              >
+                <button id="close-step-info" class="absolute top-1 right-2 text-gray-500 hover:text-gray-700">✕</button>
+                <p id="step-info-content" class="mb-2"></p>
+                <div id="step-info-links" class="space-y-1 text-lg"></div>
+              </div>
+            </div>
+          </section>
         </div>
       </section>
+
       <!-- Explore the Hub button -->
       <div class="text-center mt-10">
-        <a href="pages/leadership_training.html" class="inline-block bg-green-600 text-white font-bold text-2xl px-10 py-6 rounded hover:bg-green-800 transition">
-          See our Training Model
+        <a href="pages/emergency_resources.html" class="inline-block bg-green-800 text-white font-bold text-2xl px-10 py-6 rounded hover:bg-green-200 transition">
+          See Available Resources
         </a>
       </div>
-  </main>
-
-    <!-- Floating Chatbot Button & Window -->
-    <!-- <button id="chat-toggle" class="fixed bottom-6 right-6 bg-green-700 hover:bg-green-800 text-white p-4 rounded-full shadow-lg">
-      💬
-    </button>
-
-    <div id="chat-container" class="hidden fixed bottom-20 right-6 w-[350px] h-[500px] bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-      <iframe src="pages/trainingchatbot.html" class="w-full h-full border-none"></iframe>
-    </div> -->
+    </main>
 
     <!-- Footer -->
     <footer class="bg-green-200 mt-4 p-4 text-center text-green-800">
@@ -144,7 +220,7 @@
       //   paragraph2: "Together, we can break down barriers and build pathways for everyone to receive the same opportunities."
       // },
       {
-        title: "Training Leaders and Members for Compassionate Action",
+        title: "Training Leaders and Members for Action",
         paragraph1: "Equip your team with tools for trauma-informed care and approaches that preserve individual dignity.",
         paragraph2: "This training empowers leaders to foster trust and unity—serving as bridges, not barriers, within their communities."
       }
@@ -190,5 +266,75 @@
         chatContainer.classList.toggle("hidden");
       });
     </script>
+
+    <script>
+      const stepDetails = {
+        1: [
+          { text: 'Training', url: 'pages/leadership_training.html' },
+          { text: 'Resources & Help', url: 'pages/emergency_resources.html' }
+        ],
+        2: [
+          { text: 'Training', url: 'pages/leadership_training.html' },
+          { text: 'Resources & Help', url: 'pages/emergency_resources.html' }
+        ],
+        3: [
+          { text: 'Community Calendar', url: 'pages/community_events.html' }
+        ],
+        4: [
+          { text: 'Community Calendar', url: 'pages/community_events.html' },
+          { text: 'Training', url: 'pages/leadership_training.html' }
+        ],
+        5: [
+          { text: 'Training', url: 'pages/leadership_training.html' }
+        ],
+        6: [
+          { text: 'Training', url: 'pages/leadership_training.html' },
+          { text: 'Resources & Help', url: 'pages/emergency_resources.html' }
+        ],
+        7: [
+          { text: 'Training', url: 'pages/leadership_training.html' },
+          { text: 'Resources & Help', url: 'pages/emergency_resources.html' }
+        ],
+        8: [
+          { text: 'Resources & Help', url: 'pages/emergency_resources.html' },
+          { text: 'Community Calendar', url: 'pages/community_events.html' }
+        ]
+      };
+
+      document.querySelectorAll('#training-flowchart .step').forEach(step => {
+        step.addEventListener('click', () => {
+          const infoBox = document.getElementById('step-info');
+          const content = document.getElementById('step-info-content');
+          const links = document.getElementById('step-info-links');
+
+          content.textContent = step.getAttribute('data-info');
+          links.innerHTML = '';             // clear old links
+
+          const items = stepDetails[step.dataset.step] || [];
+          items.forEach((l, idx) => {
+            // create each anchor
+            const a = document.createElement('a');
+            a.href      = l.url;
+            a.textContent = l.text;
+            a.target    = '_blank';
+            // larger font and inline
+            a.className = 'text-lg text-green-700 hover:underline';
+            links.appendChild(a);
+
+            // add separator except after last
+            if (idx < items.length - 1) {
+              links.appendChild(document.createTextNode(' | '));
+            }
+          });
+
+          infoBox.classList.remove('hidden');
+        });
+      });
+
+      document.getElementById('close-step-info').addEventListener('click', () => {
+        document.getElementById('step-info').classList.add('hidden');
+      });
+    </script>
+
   </body>
 </html>
